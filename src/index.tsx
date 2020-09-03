@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { LinkedInPopUp } from 'react-linkedin-login-oauth2';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
-import App from './App';
+import Login from './views/login';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Route exact path="/" component={App} />
-      <Route exact path="/login" component={App} />
+      <Route exact path="/linkedin" component={LinkedInPopUp} />
+      <Route exact path="/" component={Login} />
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
